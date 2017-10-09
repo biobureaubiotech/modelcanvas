@@ -127,5 +127,6 @@ if "AMBIENTE" in os.environ and os.environ["AMBIENTE"] == "heroku":
         'default': dj_database_url.config()
     }
 
-    SECRET_KEY = os.environ["SECRET_KEY"]
+    ALLOWED_HOSTS = os.environ["SECRET_KEY"].split(';')
 
+    SECRET_KEY = os.environ["SECRET_KEY"]
