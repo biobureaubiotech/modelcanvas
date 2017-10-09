@@ -1,1 +1,1 @@
-web: gunicorn testeconcrete.wsgi:application --log-file -
+web: gunicorn modelcanvas.wsgi:application --log-file -
