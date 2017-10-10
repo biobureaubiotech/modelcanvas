@@ -16,10 +16,11 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from rest_framework import routers
-from canvas.views import CanvasViewSet
+from canvas.views import CanvasViewSet, CanvasItemsViewSet
 
 router = routers.DefaultRouter()
 router.register(r'canvas', CanvasViewSet)
+router.register(r'canvasitems', CanvasItemsViewSet)
 
 urlpatterns = [
     url(r'^api/', include(router.urls)),

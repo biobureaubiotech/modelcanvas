@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'ordered_model',
     'canvas',
     'rest_framework',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -80,7 +81,8 @@ REST_FRAMEWORK = {
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
+    ],
+    'DEFAULT_FILTER_BACKENDS': ('rest_framework_filters.backends.DjangoFilterBackend',)
 }
 
 

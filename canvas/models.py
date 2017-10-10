@@ -19,6 +19,7 @@ class Canvas(models.Model):
     creation_date = models.DateTimeField(auto_now=True)
 
 class CanvasItem(OrderedModel):
+    canvas = models.ForeignKey('Canvas', related_name="items")
     color = ColorField()
     title = models.CharField(max_length=25)
     description = models.CharField(max_length=200)
