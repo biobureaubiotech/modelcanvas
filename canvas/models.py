@@ -22,7 +22,7 @@ class CanvasItem(OrderedModel):
     canvas = models.ForeignKey('Canvas', related_name="items")
     color = ColorField()
     title = models.CharField(max_length=25)
-    description = models.CharField(max_length=200)
+    description = models.TextField()
 
     class Meta(OrderedModel.Meta):
         pass
