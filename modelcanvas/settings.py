@@ -34,6 +34,9 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'allauth',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -43,6 +46,7 @@ INSTALLED_APPS = [
     'canvas',
     'rest_framework',
     'django_filters',
+    'django.contrib.sites',
 ]
 
 MIDDLEWARE = [
@@ -85,7 +89,9 @@ REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ('rest_framework_filters.backends.DjangoFilterBackend',)
 }
 
-
+AUTHENTICATION_BACKENDS = (
+    'allauth.account.auth_backends.AuthenticationBackend',
+        )
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 

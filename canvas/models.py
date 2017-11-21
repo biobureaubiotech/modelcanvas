@@ -4,6 +4,7 @@ from ordered_model.models import OrderedModel
 
 
 ITEM_TYPE = (
+    ('BL', 'Backlog' ),
     ('KP', 'Key Partners'),
     ('KA', 'Key Activities'),
     ('VP', 'Value Propositions'),
@@ -21,8 +22,10 @@ class Canvas(models.Model):
 class CanvasItem(OrderedModel):
     canvas = models.ForeignKey('Canvas', related_name="items")
     color = ColorField()
+    itemtype = models.CharField(max_length=2, default='BL', choices=ITEM_TYPE)
     title = models.CharField(max_length=25)
     description = models.TextField()
 
     class Meta(OrderedModel.Meta):
         pass
+
